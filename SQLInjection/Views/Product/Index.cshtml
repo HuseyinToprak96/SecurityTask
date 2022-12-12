@@ -1,0 +1,33 @@
+﻿@model List<SQLInjection.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form asp-action="Index" asp-controller="Product" method="post">
+    <div class="row">
+        <div class="col-8 text-right">
+            <input type="text" name="search" />
+        </div>
+        <div>
+            <input type="submit" value="Ara"/>
+        </div>
+    </div>
+</form>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Adı</th>
+        <th>Fiyat</th>
+        <th>Stok</th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+        <td>@product.Id</td>
+        <td>@product.Name</td>
+        <td>@product.Price</td>
+            <td>@product.Stock</td>
+            </tr>
+    }
+</table>
+

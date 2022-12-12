@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "StoredXSS";
+}
+
+<h1>StoredXSS</h1>
+
+
+<form method="post">
+    <input name="name" class="form-control" />
+    <br />
+    <textarea name="comment" class="form-control">
+</textarea>
+    <br />
+    <input type="submit" value="Send" />
+</form>
+<h1>Yorumlar</h1>
+<hr />
+<ul>
+    @if (ViewBag.comments != null)
+    {
+        @foreach (var item in ViewBag.comments as string[])
+        {
+            <li>@Html.Raw(item)</li>
+        }
+    }
+</ul>
